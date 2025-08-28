@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_back"
+        android:title="← Назад"/>
+    <item
+        android:id="@+id/action_home"
+        android:title="Домой"/>
+    <item
+        android:id="@+id/action_refresh"
+        android:title="Обновить"/>
+    <item
+        android:id="@+id/action_add_home"
+        android:title="Добавить на главную"/>
+    <item
+        android:id="@+id/action_close"
+        android:title="Закрыть"/>
+</menu>

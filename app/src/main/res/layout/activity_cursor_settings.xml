@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="16dp">
 
     <TextView
-        android:id="@+id/speedLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Скорость курсора: 50" />
+        android:text="Скорость курсора:"/>
 
     <SeekBar
-        android:id="@+id/speedSeekBar"
+        android:id="@+id/cursor_speed_seekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="100"
-        android:progress="50" />
+        android:max="10"
+        android:progress="5"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Размер курсора:" 
-        android:layout_marginTop="20dp" />
+        android:text="Размер курсора:"/>
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <RadioGroup
+        android:id="@+id/cursor_size_group"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/cursorSmall"
+        <RadioButton
+            android:id="@+id/cursor_small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Маленький" />
+            android:text="Маленький"/>
 
-        <Button
-            android:id="@+id/cursorNormal"
+        <RadioButton
+            android:id="@+id/cursor_normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Стандартный" />
+            android:text="Стандартный"
+            android:checked="true"/>
 
-        <Button
-            android:id="@+id/cursorLarge"
+        <RadioButton
+            android:id="@+id/cursor_large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Большой" />
-    </LinearLayout>
+            android:text="Большой"/>
+    </RadioGroup>
 </LinearLayout>

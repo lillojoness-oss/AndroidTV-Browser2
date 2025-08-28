@@ -5,52 +5,57 @@
     android:background="@drawable/background_gradient">
 
     <!-- Поисковая строка -->
-    <EditText
-        android:id="@+id/searchBar"
+    <LinearLayout
+        android:id="@+id/search_bar"
         android:layout_width="80%"
         android:layout_height="wrap_content"
-        android:hint="Поиск в Яндекс"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:padding="10dp"
-        android:background="@android:drawable/edit_text" />
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
 
-    <!-- WebView -->
-    <WebView
-        android:id="@+id/webView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/searchBar" />
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Поиск в Яндекс"
+            android:singleLine="true"/>
+
+        <ImageButton
+            android:id="@+id/voice_search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:contentDescription="Голосовой поиск"/>
+    </LinearLayout>
 
     <!-- История (последние 3 сайта) -->
     <LinearLayout
-        android:id="@+id/historyPreview"
-        android:orientation="vertical"
+        android:id="@+id/history_preview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:padding="10dp" />
+        android:orientation="vertical"
+        android:layout_below="@id/search_bar"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"/>
 
-    <!-- Кнопка История -->
+    <!-- Кнопка "История" -->
     <Button
-        android:id="@+id/historyButton"
+        android:id="@+id/history_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="История"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_margin="10dp" />
+        android:layout_below="@id/history_preview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
 
-    <!-- Настройки курсора -->
+    <!-- Кнопка-настройка курсора (шестерёнка) -->
     <ImageButton
-        android:id="@+id/cursorSettings"
+        android:id="@+id/cursor_settings_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@android:drawable/ic_menu_manage"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:contentDescription="Настройки курсора"
-        android:background="@null"
-        android:padding="10dp" />
-
+        android:padding="10dp"/>
 </RelativeLayout>
