@@ -1,34 +1,40 @@
 package com.example.tvbrowser;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.List;
 
 public class HistoryActivity extends AppCompatActivity {
-    private HistoryManager historyManager;
-    private ArrayAdapter<String> adapter;
+    private LinearLayout historyList;
+    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-        historyManager = new HistoryManager(this);
+        historyList = findViewById(R.id.history_list);
+        prefs = getSharedPreferences("browser_history", MODE_PRIVATE);
 
-        ListView listView = findViewById(R.id.historyListView);
-        Button clearButton = findViewById(R.id.clearHistoryButton);
+        loadHistory();
 
-        List<String> history = historyManager.getHistory();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, history);
-        listView.setAdapter(adapter);
-
-        clearButton.setOnClickListener(v -> {
-            historyManager.clearHistory();
-            adapter.clear();
-            adapter.notifyDataSetChanged();
+        Button clearAll = findViewById(R.id.clear_history_button);
+        clearAll.setOnClickListener(v -> {
+            prefs.edit().clear().apply();
+            historyList.removeAllViews();
         });
+    }
+
+    private void loadHistory() {
+        historyList.removeAllViews();
+        for (String url : prefs.getAll().keySet()) {
+            TextView tv = new TextView(this);
+            tv.setText(prefs.getString(url, url));
+            historyList.addView(tv);
+        }
     }
 }
