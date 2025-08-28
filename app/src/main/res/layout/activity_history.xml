@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:padding="10dp">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="История посещений"
+        android:textSize="20sp"
+        android:paddingBottom="10dp" />
 
-        <LinearLayout
-            android:id="@+id/history_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
-    </ScrollView>
-
-    <Button
-        android:id="@+id/btn_clear_all"
+    <ListView
+        android:id="@+id/historyList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Удалить всю историю"/>
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+
+    <Button
+        android:id="@+id/clearHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Удалить всю историю"
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>
