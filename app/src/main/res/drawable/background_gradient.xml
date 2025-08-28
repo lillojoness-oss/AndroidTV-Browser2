@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Красный пастель -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="800"
+                android:centerX="0.2"
+                android:centerY="0.3"
+                android:startColor="#FFCDD2"
+                android:endColor="#00FFFFFF"/>
+        </shape>
+    </item>
+
+    <!-- Оранжевый пастель -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="900"
+                android:centerX="0.6"
+                android:centerY="0.4"
+                android:startColor="#FFE0B2"
+                android:endColor="#00FFFFFF"/>
+        </shape>
+    </item>
+
+    <!-- Желтый пастель -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="1000"
+                android:centerX="0.4"
+                android:centerY="0.7"
+                android:startColor="#FFF9C4"
+                android:endColor="#00FFFFFF"/>
+        </shape>
+    </item>
+
+    <!-- Розовый пастель -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="1100"
+                android:centerX="0.8"
+                android:centerY="0.8"
+                android:startColor="#F8BBD0"
+                android:endColor="#00FFFFFF"/>
+        </shape>
+    </item>
+</layer-list>

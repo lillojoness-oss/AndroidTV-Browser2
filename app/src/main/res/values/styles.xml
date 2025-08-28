@@ -1,7 +1,19 @@
-<resources>
-    <style name="Theme.AndroidTVBrowser2" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryDark">@color/purple_700</item>
-        <item name="colorAccent">@color/teal_200</item>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/background_gradient</item>
+        <item name="android:buttonStyle">@style/BrowserButton</item>
+        <item name="android:editTextStyle">@style/BrowserEditText</item>
+    </style>
+
+    <style name="BrowserButton" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">18sp</item>
+        <item name="android:backgroundTint">#FF7043</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="BrowserEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:backgroundTint">#FF7043</item>
+        <item name="android:textColorHint">#757575</item>
     </style>
 </resources>
