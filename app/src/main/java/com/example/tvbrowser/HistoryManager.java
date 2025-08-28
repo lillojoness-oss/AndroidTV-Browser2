@@ -8,25 +8,27 @@ import java.util.List;
 import java.util.Set;
 
 public class HistoryManager {
-    private static final String PREFS_NAME = "history_prefs";
+    private static final String PREFS_NAME = "BrowserHistory";
     private static final String KEY_HISTORY = "history";
-    private static SharedPreferences prefs;
+    private final SharedPreferences prefs;
 
-    public static void init(Context context) {
+    public HistoryManager(Context context) {
         prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
     }
 
-    public static void addHistory(String entry) {
-        Set<String> history = prefs.getStringSet(KEY_HISTORY, new HashSet<>());
-        history.add(entry);
-        prefs.edit().putStringSet(KEY_HISTORY, history).apply();
+    public void addHistoryItem(String url, String title) {
+        Set<String> historySet = prefs.getStringSet(KEY_HISTORY, new HashSet<>());
+        Set<String> newSet = new HashSet<>(historySet);
+        newSet.add(title + " - " + url);
+        prefs.edit().putStringSet(KEY_HISTORY, newSet).apply();
     }
 
-    public static List<String> getHistory() {
-        return new ArrayList<>(prefs.getStringSet(KEY_HISTORY, new HashSet<>()));
+    public List<String> getHistory() {
+        Set<String> historySet = prefs.getStringSet(KEY_HISTORY, new HashSet<>());
+        return new ArrayList<>(historySet);
     }
 
-    public static void clearHistory() {
+    public void clearHistory() {
         prefs.edit().remove(KEY_HISTORY).apply();
     }
 }
